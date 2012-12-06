@@ -1,0 +1,138 @@
+<html>
+<head>
+
+<style>
+
+body {
+  font-family: 'HelveticaNeue-Condensed', 'Helvetica Neue', Arial, sans-serif;
+  background: #44444f;
+}
+
+.wrap {
+  width: 650px;
+  margin: 20px auto;
+}
+
+table {
+  width: 400px;
+  border-collapse: collapse;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 30px;
+  box-shadow: 0 5px 50px rgba(0, 0, 0, 1);
+  background: #b8b5a7;
+}
+
+tr {
+  width: 100%;
+  border-bottom: solid 1px #aaa;
+}
+
+td, th {
+  padding: 0 10px;
+  height: 70px;
+  overflow: hidden;
+  line-height: 0;
+  text-align: left;
+  background: #eee;
+
+  -webkit-transition: opacity 0.3s ease-out 0.5s, height 0.5s cubic-bezier(0.445, 0.050, 0.550, 0.950) 0;
+}
+
+th {
+  background: #dddacc;
+}
+
+.col {
+  display: inline-block;
+  width: 150px;
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+  background: -webkit-linear-gradient(top, #84C165 0%, #75AC59 100%);
+  background: linear-gradient(top, #84C165 0%, #75AC59 100%);
+  border: 1px solid #75AC59;
+  text-shadow: 0 -1px 0 #44712E;
+  display: block;
+  margin: 0 0 10px 0;
+  border-radius: 3px;
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.5);
+  border-top: solid 1px #c6e3b8;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.filtered .bad {
+  border: none;
+}
+
+.filtered .bad td {
+  opacity: 0;
+  height: 0;
+
+  -webkit-transition: opacity 0.3s ease-out 0, height 0.5s cubic-bezier(0.445, 0.050, 0.550, 0.950) 0.3s;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class='wrap'>
+
+  <table id='flights'>
+    <tr class='header'>
+      <th>Flight</th><th>Airline</th><th>Departure</th><th>Arrival</th>
+    </tr>
+    <tr class='bad'>
+      <td>1234</td><td>US Airways</td><td>1:00</td><td>2:00</td>
+    </tr>
+    <tr class='good'>
+      <td>1234</td><td>US Airways</td><td>1:00</td><td>2:00</td>
+    </tr>
+    <tr class='bad'>
+      <td>1234</td><td>US Airways</td><td>1:00</td><td>2:00</td>
+    </tr>
+    <tr class='bad'>
+      <td>1234</td><td>US Airways</td><td>1:00</td><td>2:00</td>
+    </tr>
+    <tr class='bad'>
+      <td>1234</td><td>US Airways</td><td>1:00</td><td>2:00</td>
+    </tr>
+    <tr class='bad'>
+      <td>1234</td><td>US Airways</td><td>1:00</td><td>2:00</td>
+    </tr>
+    <tr class='good'>
+      <td>1234</td><td>US Airways</td><td>1:00</td><td>2:00</td>
+    </tr>
+    <tr class='good'>
+      <td>1234</td><td>US Airways</td><td>1:00</td><td>2:00</td>
+    </tr>
+    <tr class='bad'>
+      <td>1234</td><td>US Airways</td><td>1:00</td><td>2:00</td>
+    </tr>
+  </table>
+
+  <div class='col'>
+    <a class='btn' href='#' id='showBtn'>Show</a>
+    <a class='btn' href='#' id='hideBtn'>Hide</a>
+  </div>
+
+</div>
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+<script>
+  $('#showBtn').on('click', function(e) {
+    $('#flights').removeClass('filtered');
+  });
+
+  $('#hideBtn').on('click', function(e) {
+    $('#flights').addClass('filtered');
+  });
+</script>
+
+</body>
+</html>
