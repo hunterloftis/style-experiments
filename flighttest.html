@@ -30,6 +30,8 @@ tbody, thead {
 tr {
   border-bottom: solid 1px #aaa;
   background: #eee;
+
+  transition: all 0.3s ease-out 0.5s;
 }
 
 td, th {
@@ -80,13 +82,14 @@ th {
   letter-spacing: 1px;
 }
 
-.filtered .bad {
-  border: none;
+.filtered tr.bad {
+  border-color: transparent;
 }
 
-.filtered .bad td {
+.filtered tr.bad td {
   opacity: 0;
   height: 0;
+  margin-top: -1px;
 
   -webkit-transition: opacity 0.3s ease-out 0, height 0.5s cubic-bezier(0.445, 0.050, 0.550, 0.950) 0.3s;
   transition: opacity 0.3s ease-out 0, height 0.5s cubic-bezier(0.445, 0.050, 0.550, 0.950) 0.3s;
