@@ -127,10 +127,12 @@ th {
 <script>
   $('#showBtn').on('click', function(e) {
     $('#flights').removeClass('filtered');
+    return false;
   });
 
   $('#hideBtn').on('click', function(e) {
     $('#flights').addClass('filtered');
+    return false;
   });
 </script>
 
